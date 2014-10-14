@@ -29,6 +29,7 @@ foreach ($mails as &$item) {
     $item = array(
         'email' => $email,
         'valid' => false,
+        'result' => false,
     );
     if (preg_match($re, $item['email'])) {
         $item['valid'] = true;
@@ -42,8 +43,9 @@ foreach ($mails as &$email) {
         continue;
     }
 
-    $result = $validator->ValidateEmailBox($email['email']);
-    if ($result == 0) {
-        $result = -2;
-    }
+    $email['result'] = $validator->ValidateEmailBox($email['email']);
 }
+
+header('Content-Type: application/json');
+echo json_encode($mails);
+die;

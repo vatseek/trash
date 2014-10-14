@@ -157,10 +157,6 @@ class email_validation_class
                 $this->OutputDebug("Connecting to host address \"" . $ip . "\"...");
             }
 
-            $this->timeout = 15;
-
-            $s = fsockopen($ip, 465, $errno, $error, $this->timeout);
-
             if (($connection = ($this->timeout ? @fsockopen($ip, 25, $errno, $error, $this->timeout) : @fsockopen($ip, 25)))) {
                 $timeout = ($this->data_timeout ? $this->data_timeout : $this->timeout);
 

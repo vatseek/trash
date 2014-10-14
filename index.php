@@ -1,9 +1,8 @@
 ﻿<?php
 $mails = array(
-'dankovAB@gmail.com',
 'salon@etnabride.ru',
-'simirykova@mail.ru',
-'03rus@mail.ru',
+//'simirykova@mail.ru',
+//'03rus@mail.ru',
 '07klas07@mail.ru',
 '1_jw@mail.ru',
 '110684.84@mail.ru',
